@@ -15,6 +15,7 @@ import Notifications from "../components/ownerDashboard/Notifications";
 import Settings from "../components/ownerDashboard/Settings";
 
 import "../style/OwnerDashboard.css";
+import "../style/AddUserModal.css";
 
 const OwnerDashboard = () => {
   const [activeTab, setActiveTab] = useState(

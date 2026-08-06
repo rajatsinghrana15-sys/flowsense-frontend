@@ -30,7 +30,9 @@ const UserManagement = () => {
     try {
       setLoading(true);
 
-      const response = await axios.get("http://10.189.81.148:5000/api/users");
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/users`,
+      );
 
       setUsers(response.data);
     } catch (error) {
@@ -50,7 +52,7 @@ const UserManagement = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://10.189.81.148:5000/api/users/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/${id}`);
 
       fetchUsers();
     } catch (error) {
