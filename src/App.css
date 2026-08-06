@@ -1,0 +1,92 @@
+.app-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.app-loader-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-spinner-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.app-ring-1 {
+  width: 100%;
+  height: 100%;
+  border-top-color: #2563eb;
+  border-right-color: #2563eb;
+  animation: appSpinRight 1.2s linear infinite;
+}
+
+.app-ring-2 {
+  width: 70%;
+  height: 70%;
+  border-bottom-color: #38bdf8;
+  border-left-color: #38bdf8;
+  animation: appSpinLeft 0.8s linear infinite;
+}
+
+.app-loader-core {
+  width: 16px;
+  height: 16px;
+  background-color: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #6366f1;
+  animation: appPulse 1.5s ease-in-out infinite;
+}
+
+.app-loader-text {
+  margin-top: 24px;
+  color: #f8fafc;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@keyframes appSpinRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appSpinLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes appPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

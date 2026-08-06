@@ -1,0 +1,301 @@
+/* ==========================================
+   FlowSense AI - Product Page
+   White + Light Blue Enterprise Theme
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.product-page-container {
+  min-height: 100vh;
+  padding: 80px 7%;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+}
+
+/* ===========================
+        HERO
+=========================== */
+
+.product-header {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.product-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1464f4;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.product-description {
+  font-size: 18px;
+  color: #5b6b82;
+  line-height: 1.9;
+}
+
+/* ===========================
+        GRID
+=========================== */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+/* ===========================
+      SIDEBAR
+=========================== */
+
+.product-sidebar {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 25px;
+  border: 1px solid #d8e9ff;
+  box-shadow: 0 20px 45px rgba(16, 112, 255, 0.08);
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #6b87b6;
+  margin-bottom: 22px;
+}
+
+.module-tab-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  color: #50627d;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.35s;
+  margin-bottom: 10px;
+}
+
+.module-tab-btn:hover {
+  background: #eef6ff;
+  color: #1570ef;
+  transform: translateX(6px);
+}
+
+.module-tab-btn.active {
+  background: linear-gradient(135deg, #1677ff, #4da3ff);
+  color: white;
+  box-shadow: 0 12px 30px rgba(22, 119, 255, 0.25);
+}
+
+.module-tab-btn.active .tab-icon {
+  color: white;
+}
+
+.tab-icon {
+  width: 22px;
+  height: 22px;
+  color: #1570ef;
+}
+
+/* ===========================
+      CONTENT CARD
+=========================== */
+
+.product-content-card {
+  background: white;
+  border-radius: 24px;
+  padding: 45px;
+  border: 1px solid #dcecff;
+  box-shadow: 0 25px 50px rgba(25, 118, 210, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1677ff, #5cbcff);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 15px 30px rgba(22, 119, 255, 0.25);
+}
+
+.module-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e8f3ff;
+  color: #1570ef;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.module-heading {
+  margin-top: 14px;
+  font-size: 34px;
+  color: #22324b;
+  font-weight: 700;
+}
+
+.module-body-text {
+  margin: 35px 0;
+  color: #5b6b82;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+/* ===========================
+       HIGHLIGHTS
+=========================== */
+
+.highlights-container {
+  margin-top: 10px;
+}
+
+.highlights-title {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #24324b;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  background: #f8fbff;
+  border-left: 5px solid #4da3ff;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.highlight-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 25px rgba(22, 119, 255, 0.08);
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  color: #22c55e;
+}
+
+.highlight-item span {
+  color: #4b5d78;
+  font-size: 15px;
+}
+
+/* ===========================
+         CTA
+=========================== */
+
+.demo-cta-banner {
+  margin-top: 45px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #1677ff, #5dbdff);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.cta-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cta-subtext {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: white;
+  color: #1570ef;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: #eef7ff;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-page-container {
+    padding: 40px 20px;
+  }
+
+  .product-title {
+    font-size: 36px;
+  }
+
+  .product-content-card {
+    padding: 28px;
+  }
+
+  .module-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .demo-cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

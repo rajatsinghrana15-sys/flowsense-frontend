@@ -1,0 +1,472 @@
+/* ==========================================
+        FLOWSENSE AI CONTACT PAGE
+========================================== */
+
+.contact-wrapper {
+  width: 100%;
+
+  background:
+    radial-gradient(circle at top left, #edf7ff, transparent 40%),
+    radial-gradient(circle at bottom right, #eef8ff, transparent 45%), #f8fbff;
+
+  padding: 85px 0;
+}
+
+.contact-container {
+  width: min(1180px, 92%);
+
+  margin: auto;
+}
+
+/* ==========================================
+            MAIN GRID
+========================================== */
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 45px;
+
+  align-items: center;
+}
+
+/* ==========================================
+            LEFT INFORMATION
+========================================== */
+
+.contact-info {
+  animation: fadeUp 0.8s ease both;
+}
+
+.contact-badge {
+  display: inline-flex;
+
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  background: #ecf7ff;
+
+  color: #1d8fff;
+
+  border: 1px solid #dbeeff;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+}
+
+.contact-title {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+
+  font-weight: 800;
+
+  color: #1f2937;
+
+  line-height: 1.2;
+
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  color: #64748b;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 30px;
+}
+
+/* Audience */
+
+.audience-list {
+  background: white;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  border: 1px solid #dbeeff;
+
+  color: #475569;
+
+  line-height: 1.7;
+
+  margin-bottom: 35px;
+
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.06);
+}
+
+.audience-list strong {
+  color: #1f2937;
+}
+
+/* Direct Details */
+
+.direct-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.detail-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: #334155;
+
+  font-weight: 600;
+}
+
+.detail-icon {
+  padding: 5px;
+  width: 45px;
+  height: 35px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #ecf7ff;
+
+  font-size: 20px;
+}
+
+/* ==========================================
+            FORM CARD
+========================================== */
+
+.contact-form-card {
+  background: white;
+
+  padding: 45px;
+
+  border-radius: 32px;
+
+  border: 1px solid #dbeeff;
+
+  box-shadow: 0 25px 60px rgba(30, 64, 175, 0.1);
+
+  animation: fadeUp 0.8s ease both;
+}
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  color: #334155;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border-radius: 14px;
+
+  border: 1px solid #dbeeff;
+
+  outline: none;
+
+  font-size: 0.95rem;
+
+  color: #1f2937;
+
+  background: #fbfdff;
+
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1d8fff;
+
+  box-shadow: 0 0 0 4px rgba(29, 143, 255, 0.12);
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+/* ==========================================
+            SUBMIT BUTTON
+========================================== */
+
+.submit-btn {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #1d8fff, #55b3ff);
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  box-shadow: 0 15px 30px rgba(29, 143, 255, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-5px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+/* ==========================================
+            MODAL
+========================================== */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 999;
+
+  backdrop-filter: blur(8px);
+}
+
+.modal-card {
+  width: min(420px, 90%);
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+
+  animation: modalPop 0.35s ease;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+.modal-status-icon {
+  width: 70px;
+
+  height: 70px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 35px;
+
+  color: white;
+
+  margin-bottom: 20px;
+}
+
+.modal-status-icon.success {
+  background: #22c55e;
+}
+
+.modal-status-icon.error {
+  background: #ef4444;
+}
+
+.modal-card h2 {
+  color: #1f2937;
+
+  margin-bottom: 12px;
+}
+
+.modal-card p {
+  color: #64748b;
+
+  line-height: 1.7;
+
+  margin-bottom: 25px;
+}
+
+.modal-close-btn {
+  padding: 14px 35px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #1d8fff;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.modal-close-btn:hover {
+  transform: translateY(-4px);
+}
+
+.detail-icon {
+  font-size: 20px;
+  color: #1d8cff;
+  flex-shrink: 0;
+}
+
+.modal-status-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+}
+
+.modal-status-icon.success {
+  background: #eaf8ef;
+  color: #16a34a;
+}
+
+.modal-status-icon.error {
+  background: #fdecec;
+  color: #dc2626;
+}
+
+/* ==========================================
+            ANIMATION
+========================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media (max-width: 950px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .direct-details {
+    align-items: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-wrapper {
+    padding: 60px 0;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-form-card {
+    padding: 28px 20px;
+
+    border-radius: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .audience-list {
+    font-size: 0.95rem;
+  }
+}

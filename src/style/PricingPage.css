@@ -1,0 +1,448 @@
+/* ==========================================
+        FLOWSENSE AI PRICING PAGE
+========================================== */
+
+/* ==========================================
+        PAGE WRAPPER
+========================================== */
+
+.pricing-page-wrapper {
+  width: 100%;
+
+  background:
+    radial-gradient(circle at top left, #edf7ff, transparent 40%),
+    radial-gradient(circle at bottom right, #eef8ff, transparent 45%), #f8fbff;
+
+  padding: 85px 0;
+}
+
+.pricing-container {
+  width: min(1180px, 92%);
+
+  margin: auto;
+}
+
+/* ==========================================
+            HERO
+========================================== */
+
+.pricing-hero {
+  text-align: center;
+
+  margin-bottom: 80px;
+}
+
+.pricing-badge {
+  display: inline-flex;
+
+  padding: 10px 24px;
+
+  border-radius: 999px;
+
+  background: #ecf7ff;
+
+  color: #1d8fff;
+
+  border: 1px solid #dbeeff;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+.pricing-title {
+  max-width: 850px;
+
+  margin: auto;
+
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+
+  line-height: 1.2;
+
+  color: #1f2937;
+
+  font-weight: 800;
+}
+
+.pricing-subtitle {
+  max-width: 760px;
+
+  margin: 22px auto;
+
+  color: #64748b;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+/* ==========================================
+            PRICING GRID
+========================================== */
+
+.pricing-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+/* ==========================================
+            CARD
+========================================== */
+
+.pricing-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border-radius: 30px;
+
+  padding: 40px 32px;
+
+  border: 1px solid #dbeeff;
+
+  box-shadow: 0 18px 45px rgba(30, 64, 175, 0.08);
+
+  transition: 0.4s ease;
+
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 5px;
+
+  background: linear-gradient(90deg, #42b6ff, #1d8fff, #67c8ff);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: 0.4s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+
+  border-color: #8fd2ff;
+
+  box-shadow: 0 30px 70px rgba(29, 143, 255, 0.16);
+}
+
+.pricing-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ==========================================
+        POPULAR CARD
+========================================== */
+
+.pricing-card.popular {
+  border: 2px solid #1d8fff;
+
+  transform: translateY(-15px);
+
+  box-shadow: 0 30px 80px rgba(29, 143, 255, 0.2);
+}
+
+.pricing-card.popular:hover {
+  transform: translateY(-25px);
+}
+
+.popular-tag {
+  position: absolute;
+
+  top: 20px;
+
+  right: 20px;
+
+  padding: 7px 16px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #1d8fff, #55b3ff);
+
+  color: white;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}
+
+/* ==========================================
+            HEADER
+========================================== */
+
+.plan-name {
+  font-size: 1.7rem;
+
+  color: #1f2937;
+
+  font-weight: 800;
+
+  margin-bottom: 8px;
+}
+
+.plan-target {
+  color: #64748b;
+
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+            PRICE
+========================================== */
+
+.plan-price-box {
+  margin: 30px 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+.price-val {
+  font-size: 2.8rem;
+
+  font-weight: 800;
+
+  color: #1d8fff;
+}
+
+.price-period {
+  color: #64748b;
+
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+            FEATURES
+========================================== */
+
+.plan-features {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 30px 0;
+}
+
+.plan-features li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+
+  color: #334155;
+
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  width: 25px;
+
+  height: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #ecf7ff;
+
+  color: #1d8fff;
+
+  font-weight: 700;
+}
+
+/* ==========================================
+            BUTTONS
+========================================== */
+
+.plan-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border-radius: 50px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+}
+
+.plan-btn-outline {
+  background: white;
+
+  border: 2px solid #1d8fff;
+
+  color: #1d8fff;
+}
+
+.plan-btn-outline:hover {
+  background: #1d8fff;
+
+  color: white;
+}
+
+.plan-btn-primary {
+  background: linear-gradient(135deg, #1d8fff, #55b3ff);
+
+  border: none;
+
+  color: white;
+
+  box-shadow: 0 15px 30px rgba(29, 143, 255, 0.25);
+}
+
+.plan-btn-primary:hover {
+  transform: translateY(-4px);
+}
+
+/* ==========================================
+        ENTERPRISE BANNER
+========================================== */
+
+.enterprise-banner {
+  margin-top: 90px;
+
+  padding: 55px;
+
+  text-align: center;
+
+  border-radius: 32px;
+
+  background: linear-gradient(135deg, #0f7ae5, #32a7ff);
+
+  color: white;
+
+  box-shadow: 0 30px 70px rgba(29, 143, 255, 0.28);
+}
+
+.enterprise-banner h3 {
+  font-size: 2rem;
+
+  font-weight: 800;
+
+  margin-bottom: 15px;
+}
+
+.enterprise-banner p {
+  max-width: 750px;
+
+  margin: auto;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  margin-bottom: 30px;
+}
+
+.enterprise-btn {
+  padding: 15px 35px;
+
+  border-radius: 50px;
+
+  border: none;
+
+  background: white;
+
+  color: #1d8fff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+}
+
+.enterprise-btn:hover {
+  transform: translateY(-5px);
+
+  background: #eef8ff;
+}
+
+/* ==========================================
+            ANIMATION
+========================================== */
+
+.pricing-card,
+.enterprise-banner {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricing-card.popular {
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-card {
+    padding: 30px 22px;
+  }
+
+  .enterprise-banner {
+    padding: 40px 22px;
+  }
+
+  .enterprise-banner h3 {
+    font-size: 1.5rem;
+  }
+}

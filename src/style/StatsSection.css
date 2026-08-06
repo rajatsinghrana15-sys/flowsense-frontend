@@ -1,0 +1,117 @@
+.stats-section {
+  width: 100% !important;
+  padding: 80px 0 !important;
+  background: #f8fbff !important;
+}
+
+.stats-container {
+  width: min(1400px, 92%) !important;
+  margin: auto !important;
+}
+
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+}
+
+.stat-card {
+  background: #ffffff !important;
+  border: 1px solid #e7f2ff !important;
+  border-radius: 20px !important;
+  padding: 35px 28px !important;
+  text-align: center !important;
+  transition: all 0.35s ease !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 45px rgba(41, 152, 255, 0.15) !important;
+  border-color: #5ab6ff !important;
+}
+
+.stat-value {
+  font-size: clamp(2rem, 4vw, 2.8rem) !important;
+  font-weight: 800 !important;
+  color: #1d8fff !important;
+  margin-bottom: 14px !important;
+  line-height: 1 !important;
+}
+
+.stat-label {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  line-height: 1.7 !important;
+  max-width: 220px !important;
+  margin: auto !important;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 60px 0 !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .stat-card {
+    padding: 30px 24px !important;
+  }
+
+  .stat-value {
+    font-size: 2.3rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    width: 90% !important;
+  }
+
+  .stat-card {
+    border-radius: 18px !important;
+    padding: 28px 20px !important;
+  }
+
+  .stat-value {
+    font-size: 2rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.92rem !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .stats-container {
+    width: 1500px !important;
+  }
+
+  .stats-grid {
+    gap: 30px !important;
+  }
+
+  .stat-card {
+    padding: 42px !important;
+  }
+
+  .stat-value {
+    font-size: 3rem !important;
+  }
+}

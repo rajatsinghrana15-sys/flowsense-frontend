@@ -1,0 +1,1235 @@
+/* =====================================================
+        FEATURES & SUCCESS SECTION
+===================================================== */
+
+.features-success-section {
+  position: relative;
+  padding: 110px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  overflow: hidden;
+}
+
+/* Soft Background Blur */
+
+.features-success-section::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -220px;
+  right: -220px;
+  border-radius: 50%;
+  background: rgba(77, 166, 255, 0.08);
+  filter: blur(120px);
+}
+
+.features-success-section::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  bottom: -180px;
+  left: -180px;
+  border-radius: 50%;
+  background: rgba(130, 210, 255, 0.12);
+  filter: blur(120px);
+}
+
+/* =====================================================
+                CONTAINER
+===================================================== */
+
+.section-container {
+  width: min(1400px, 92%);
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+                SECTION TITLE
+===================================================== */
+
+.section-title {
+  position: relative;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #10233d;
+  margin-bottom: 70px;
+  letter-spacing: -0.5px;
+}
+
+/* Underline */
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 5px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1d8fff, #77c9ff);
+}
+
+/* Small Decorative Dot */
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 60px);
+  bottom: -22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1d8fff;
+  box-shadow: 120px 0 #1d8fff;
+}
+
+/* =====================================================
+              COMMON SPACING
+===================================================== */
+
+.features-grid,
+.how-it-works-container,
+.customer-success-container,
+.cta-banner {
+  margin-top: 110px;
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .features-success-section {
+    padding: 90px 0;
+  }
+
+  .section-title {
+    margin-bottom: 60px;
+  }
+
+  .features-grid,
+  .how-it-works-container,
+  .customer-success-container,
+  .cta-banner {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-success-section {
+    padding: 70px 0;
+  }
+
+  .section-container {
+    width: 92%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+
+    margin-bottom: 50px;
+  }
+
+  .features-grid,
+  .how-it-works-container,
+  .customer-success-container,
+  .cta-banner {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+
+/* =====================================================
+                    FEATURES GRID
+===================================================== */
+
+.features-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+/* =====================================================
+                    FEATURE CARD
+===================================================== */
+
+.feature-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border: 1px solid #e8f3ff;
+
+  border-radius: 24px;
+
+  padding: 38px 28px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* Top Gradient Line */
+
+.feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: linear-gradient(90deg, #1d8fff, #74c9ff);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: 0.45s;
+}
+
+/* Light Effect */
+
+.feature-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+
+  left: -50%;
+
+  width: 200%;
+
+  height: 220%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: 0.8s;
+}
+
+/* Hover */
+
+.feature-card:hover {
+  transform: translateY(-12px);
+
+  border-color: #69bbff;
+
+  box-shadow: 0 25px 55px rgba(29, 143, 255, 0.16);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card:hover::after {
+  top: 120%;
+}
+
+/* =====================================================
+                    FEATURE ICON
+===================================================== */
+
+.feature-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 78px;
+
+  height: 78px;
+
+  margin: auto;
+
+  margin-bottom: 22px;
+
+  font-size: 34px;
+
+  color: #1d8fff;
+
+  background: linear-gradient(135deg, #edf8ff, #ffffff);
+
+  border: 2px solid #dceeff;
+
+  border-radius: 22px;
+
+  transition: 0.4s;
+
+  box-shadow: 0 12px 25px rgba(29, 143, 255, 0.08);
+}
+
+/* Hover */
+
+.feature-card:hover .feature-icon {
+  background: linear-gradient(135deg, #1d8fff, #4db2ff);
+
+  color: #ffffff;
+
+  transform: rotate(-8deg) scale(1.08);
+
+  box-shadow: 0 18px 35px rgba(29, 143, 255, 0.3);
+}
+
+/* =====================================================
+                FEATURE TEXT
+===================================================== */
+
+.feature-card h3 {
+  font-size: 1.15rem;
+
+  font-weight: 700;
+
+  line-height: 1.55;
+
+  color: #12263f;
+
+  transition: 0.3s;
+}
+
+.feature-card:hover h3 {
+  color: #1d8fff;
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .feature-card {
+    padding: 32px 24px;
+  }
+
+  .feature-icon {
+    width: 68px;
+
+    height: 68px;
+
+    font-size: 30px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* =====================================================
+                    HOW IT WORKS
+===================================================== */
+
+.how-it-works-container {
+  margin-top: 120px;
+}
+
+.flow-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scrollbar-width: none;
+}
+
+.flow-timeline::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+                    STEP CARD
+===================================================== */
+
+.flow-step-card {
+  position: relative;
+  min-width: 220px;
+  max-width: 220px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7f3ff;
+
+  border-radius: 24px;
+
+  padding: 32px 24px;
+
+  text-align: center;
+
+  transition: 0.4s ease;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.flow-step-card:hover {
+  transform: translateY(-10px);
+
+  border-color: #63b7ff;
+
+  box-shadow: 0 25px 55px rgba(29, 143, 255, 0.16);
+}
+
+/* =====================================================
+                STEP NUMBER
+===================================================== */
+
+.step-number {
+  width: 62px;
+
+  height: 62px;
+
+  margin: auto;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #1d8fff;
+
+  background: linear-gradient(135deg, #eef8ff, #ffffff);
+
+  border: 2px solid #dceeff;
+
+  transition: 0.35s;
+}
+
+.flow-step-card:hover .step-number {
+  background: #1d8fff;
+
+  color: #fff;
+
+  transform: scale(1.08);
+}
+
+/* =====================================================
+                    TEXT
+===================================================== */
+
+.flow-step-card h4 {
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  color: #12263f;
+
+  margin-bottom: 10px;
+}
+
+.flow-step-card p {
+  font-size: 0.95rem;
+
+  color: #64748b;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+                    CONNECTOR
+===================================================== */
+
+.flow-line {
+  width: 90px;
+
+  height: 4px;
+
+  background: #d8ecff;
+
+  position: relative;
+
+  border-radius: 20px;
+}
+
+.flow-dot {
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  width: 12px;
+
+  height: 12px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: #1d8fff;
+
+  animation: moveDot 2s linear infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - 12px);
+  }
+}
+
+/* =====================================================
+                SHINE EFFECT
+===================================================== */
+
+.flow-step-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -120%;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.flow-step-card:hover::before {
+  left: 120%;
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .flow-timeline {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .flow-line {
+    width: 4px;
+
+    height: 70px;
+  }
+
+  .flow-dot {
+    left: 50%;
+
+    top: 0;
+
+    transform: translateX(-50%);
+
+    animation: moveVertical 2s linear infinite;
+  }
+
+  @keyframes moveVertical {
+    0% {
+      top: 0;
+    }
+
+    100% {
+      top: calc(100% - 12px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-step-card {
+    min-width: 100%;
+
+    max-width: 100%;
+  }
+}
+
+/* =====================================================
+                CUSTOMER SUCCESS
+===================================================== */
+
+.customer-success-container {
+  margin-top: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.success-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-top: 45px;
+}
+
+/* =====================================================
+                SUCCESS CARD
+===================================================== */
+
+.success-card {
+  position: relative;
+
+  isolation: isolate;
+
+  background: #ffffff;
+
+  border-radius: 26px;
+
+  padding: 40px 35px;
+
+  border: 1px solid #e8f2ff;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* Keep content above glow */
+
+.success-card h3,
+.success-card .stat-item {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* Top Line */
+
+.success-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 5px;
+
+  z-index: 2;
+}
+
+.before-card::before {
+  background: linear-gradient(90deg, #ff6b6b, #ffa94d);
+}
+
+.after-card::before {
+  background: linear-gradient(90deg, #1d8fff, #67c0ff);
+}
+
+/* Background Glow */
+
+.success-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  right: -35px;
+
+  top: -35px;
+
+  border-radius: 50%;
+
+  background: rgba(77, 166, 255, 0.1);
+
+  z-index: 0;
+
+  transition: 0.4s;
+}
+
+.success-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 55px rgba(29, 143, 255, 0.18);
+}
+
+.success-card:hover::after {
+  transform: scale(1.3);
+}
+
+/* =====================================================
+                    HEADING
+===================================================== */
+
+.success-card h3 {
+  font-size: 1.45rem;
+
+  font-weight: 700;
+
+  color: #10233d;
+
+  margin-bottom: 30px;
+}
+
+/* =====================================================
+                    STAT ROW
+===================================================== */
+
+.stat-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #edf5ff;
+
+  transition: 0.3s;
+}
+
+.stat-item:last-child {
+  border: none;
+}
+
+.stat-item span:first-child {
+  color: #64748b;
+
+  font-weight: 500;
+}
+
+.stat-item span:last-child {
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+/* Before */
+
+.before-card .stat-item span:last-child {
+  color: #ef4444;
+}
+
+/* After */
+
+.after-card .stat-item span:last-child {
+  color: #10b981;
+}
+
+/* Hover rows */
+
+.success-card:hover .stat-item {
+  padding-left: 6px;
+}
+
+.success-card:hover .stat-item span:last-child {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .success-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-success-container {
+    margin-top: 90px;
+  }
+
+  .success-card {
+    padding: 32px 25px;
+  }
+
+  .success-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+}
+
+/* =====================================================
+                    CTA BANNER
+===================================================== */
+
+.cta-banner {
+  position: relative;
+
+  margin-top: 130px;
+
+  padding: 80px 50px;
+
+  text-align: center;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #1d8fff 0%, #3ea7ff 45%, #7bd0ff 100%);
+
+  box-shadow: 0 35px 70px rgba(29, 143, 255, 0.28);
+}
+
+/* =====================================================
+                BACKGROUND EFFECT
+===================================================== */
+
+.cta-banner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+
+  height: 320px;
+
+  left: -120px;
+
+  top: -120px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cta-banner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+
+  height: 260px;
+
+  right: -80px;
+
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =====================================================
+                    TITLE
+===================================================== */
+
+.cta-banner h2 {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  color: #ffffff;
+
+  max-width: 900px;
+
+  margin: auto;
+
+  margin-bottom: 35px;
+}
+
+/* =====================================================
+                    BUTTON
+===================================================== */
+
+.cta-button {
+  position: relative;
+
+  z-index: 2;
+
+  border: none;
+
+  outline: none;
+
+  padding: 18px 42px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  background: #ffffff;
+
+  color: #1d8fff;
+
+  transition: 0.35s;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:hover {
+  transform: translateY(-6px);
+
+  background: #eef8ff;
+
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================
+                FLOATING GLOW
+===================================================== */
+
+.cta-banner .glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  animation: floatGlow 6s infinite ease-in-out;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .cta-banner {
+    padding: 70px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 60px 25px;
+
+    border-radius: 26px;
+  }
+
+  .cta-banner h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 16px 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-banner {
+    padding: 50px 20px;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.6rem;
+
+    line-height: 1.4;
+  }
+
+  .cta-button {
+    width: 100%;
+
+    max-width: 260px;
+  }
+}
+
+/* =====================================================
+            PREMIUM POLISH
+===================================================== */
+
+/* Smooth Animation */
+
+* {
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* Smooth Scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better Text Rendering */
+
+body {
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* Images */
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+/* Remove Tap Highlight */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus */
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
+/* Better Selection */
+
+::selection {
+  background: #1d8fff;
+
+  color: #fff;
+}
+
+/* Card Hover */
+
+.feature-card,
+.flow-step-card,
+.success-card {
+  will-change: transform;
+}
+
+/* Shadow Animation */
+
+.feature-card:hover,
+.flow-step-card:hover,
+.success-card:hover {
+  transform: translateY(-10px);
+}
+
+/* =====================================================
+            FLOATING ANIMATION
+===================================================== */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.feature-icon {
+  animation: floating 5s ease-in-out infinite;
+}
+
+.step-number {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* =====================================================
+            SCROLL FADE
+===================================================== */
+
+.fade-up {
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  animation: fadeUp 0.8s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+            GLASS EFFECT
+===================================================== */
+
+.feature-card,
+.flow-step-card,
+.success-card {
+  backdrop-filter: blur(12px);
+}
+
+/* =====================================================
+            BUTTON EFFECT
+===================================================== */
+
+.cta-button {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+
+  position: absolute;
+
+  left: -120%;
+
+  top: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.cta-button:hover::before {
+  left: 120%;
+}
+
+/* =====================================================
+            RESPONSIVE GAP
+===================================================== */
+
+@media (max-width: 768px) {
+  .section-container {
+    padding-inline: 4px;
+  }
+}
+
+.feature-card:hover {
+  background: linear-gradient(180deg, #ffffff, #f6fbff);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf7ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6cbcff;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d8fff;
+}
+
+.features-success-section {
+  animation: pageFade 1s;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}

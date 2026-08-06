@@ -1,0 +1,361 @@
+/* =========================
+        PROBLEM SECTION
+========================= */
+
+.problem-section {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #ffffff, #f8fcff);
+}
+
+.problem-container {
+  width: min(1400px, 92%);
+  margin: auto;
+}
+
+/* =========================
+        HEADER
+========================= */
+
+.problem-header {
+  text-align: center;
+  max-width: 760px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.problem-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 40px;
+  background: #e9f6ff;
+  color: #1d8fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.problem-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1e293b;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.problem-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+.problem-reality {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #1d8fff;
+  font-weight: 700;
+}
+
+/* =========================
+        GRID
+========================= */
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================
+      LEFT SIDE
+========================= */
+
+.problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.problem-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e5f3ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.35s;
+}
+
+.problem-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 20px 40px rgba(41, 152, 255, 0.15);
+}
+
+.problem-icon {
+  width: 44px;
+  height: 44px;
+  background: #ffeaea;
+  color: #ff4d4f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.problem-text {
+  color: #334155;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* =========================
+      COMPARISON CARD
+========================= */
+
+.comparison-card {
+  background: white;
+  padding: 35px;
+  border-radius: 24px;
+  border: 1px solid #e5f3ff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.process-box {
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.expected-box {
+  background: #eef8ff;
+}
+
+.actual-box {
+  background: #fff5f5;
+}
+
+.process-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 35px;
+}
+
+.arrow-down {
+  text-align: center;
+  font-size: 2rem;
+  margin: 28px 0;
+  color: #1d8fff;
+}
+
+/* =========================
+        WORKFLOW
+========================= */
+
+.workflow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 70px;
+  height: 4px;
+  background: #9fd2ff;
+  position: relative;
+  border-radius: 10px;
+}
+
+.node {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: white;
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  transition: 0.35s;
+}
+
+.node:hover {
+  transform: scale(1.08);
+}
+
+.node.active {
+  background: linear-gradient(135deg, #4da6ff, #1d8fff);
+  color: white;
+}
+
+.warning {
+  background: #fff4d6;
+  color: #9a6700;
+}
+
+.danger {
+  background: #ffe5e5;
+  color: #d7263d;
+}
+
+/* =========================
+      MOVING DOT
+========================= */
+
+.moving-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #1d8fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation: moveDot 4s linear infinite;
+  box-shadow: 0 0 12px rgba(29, 143, 255, 0.6);
+}
+
+.workflow.messy .moving-dot {
+  background: #ff6b6b;
+  box-shadow: 0 0 12px rgba(255, 107, 107, 0.7);
+}
+
+@keyframes moveDot {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - 14px);
+  }
+}
+
+/* =========================
+        TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .comparison-card {
+    max-width: 750px;
+    margin: auto;
+  }
+}
+
+/* =========================
+        MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .problem-section {
+    padding: 70px 0;
+  }
+
+  .problem-header {
+    margin-bottom: 50px;
+  }
+
+  .problem-title {
+    font-size: 2rem;
+  }
+
+  .workflow {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .line {
+    width: 4px;
+    height: 45px;
+  }
+
+  .moving-dot {
+    display: none;
+  }
+
+  .arrow-down {
+    margin: 35px 0;
+  }
+
+  .problem-item {
+    padding: 18px;
+  }
+}
+
+/* =========================
+      SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .problem-container {
+    width: 90%;
+  }
+
+  .problem-title {
+    font-size: 1.8rem;
+  }
+
+  .problem-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .problem-item {
+    gap: 14px;
+  }
+
+  .problem-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .node {
+    width: 65px;
+    height: 65px;
+    font-size: 0.78rem;
+  }
+
+  .process-box {
+    padding: 22px;
+  }
+
+  .comparison-card {
+    padding: 22px;
+  }
+}
+
+/* =========================
+        LARGE SCREEN
+========================= */
+
+@media (min-width: 1600px) {
+  .problem-container {
+    width: 1500px;
+  }
+
+  .problem-grid {
+    gap: 80px;
+  }
+
+  .problem-title {
+    font-size: 3.3rem;
+  }
+
+  .node {
+    width: 82px;
+    height: 82px;
+  }
+
+  .line {
+    width: 90px;
+  }
+}
