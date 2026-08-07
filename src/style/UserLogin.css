@@ -190,6 +190,64 @@
   text-decoration: underline;
 }
 
+.user-login-loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+}
+
+.user-login-loader-box {
+  width: 280px;
+  padding: 35px;
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.user-login-loader {
+  width: 65px;
+  height: 65px;
+
+  margin: auto auto 20px;
+
+  border: 5px solid #dbeafe;
+  border-top: 5px solid #2998ff;
+
+  border-radius: 50%;
+
+  animation: userLoginLoader 1s linear infinite;
+}
+
+.user-login-loader-box h3 {
+  color: #0f172a;
+
+  margin-bottom: 8px;
+}
+
+.user-login-loader-box p {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+@keyframes userLoginLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 500px) {
   .user-login-card {
     padding: 25px;

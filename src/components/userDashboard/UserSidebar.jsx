@@ -34,16 +34,20 @@ const UserSidebar = ({
   ];
 
   return (
-    <aside className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      <div className="sidebar-header">
-        <div className="brand-logo">
-          <div className="logo-icon">
+    <aside
+      className={`user-sidebar ${isCollapsed ? "user-sidebar-collapsed" : ""}`}
+    >
+      <div className="user-sidebar-header">
+        <div className="user-sidebar-brand">
+          <div className="user-sidebar-logo">
             <Cpu size={22} />
           </div>
-          {!isCollapsed && <span className="brand-name">FlowSense AI</span>}
+          {!isCollapsed && (
+            <span className="user-sidebar-brand-name">FlowSense AI</span>
+          )}
         </div>
         <button
-          className="collapse-btn"
+          className="user-sidebar-toggle-btn"
           onClick={() => setIsCollapsed(!isCollapsed)}
           title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
         >
@@ -51,23 +55,27 @@ const UserSidebar = ({
         </button>
       </div>
 
-      <nav className="sidebar-nav">
-        <ul>
+      <nav className="user-sidebar-nav">
+        <ul className="user-sidebar-menu">
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive =
               activeTab === item.id ||
               (activeTab === "process-details" && item.id === "my-processes");
             return (
-              <li key={item.id}>
+              <li className="user-sidebar-menu-item" key={item.id}>
                 <button
-                  className={`nav-item ${isActive ? "active" : ""}`}
+                  className={`user-sidebar-link ${isActive ? "user-sidebar-link-active" : ""}`}
                   onClick={() => setActiveTab(item.id)}
                   title={isCollapsed ? item.label : ""}
                 >
-                  <Icon size={20} className="nav-icon" />
-                  {!isCollapsed && <span>{item.label}</span>}
-                  {isActive && <div className="active-indicator" />}
+                  <Icon size={20} className="user-sidebar-icon" />
+                  {!isCollapsed && (
+                    <span className="user-sidebar-text">{item.label}</span>
+                  )}
+                  {isActive && (
+                    <div className="user-sidebar-active-indicator" />
+                  )}
                 </button>
               </li>
             );
@@ -75,10 +83,13 @@ const UserSidebar = ({
         </ul>
       </nav>
 
-      <div className="sidebar-footer">
-        <button className="logout-btn" title={isCollapsed ? "Logout" : ""}>
+      <div className="user-sidebar-footer">
+        <button
+          className="user-sidebar-logout-btn"
+          title={isCollapsed ? "Logout" : ""}
+        >
           <LogOut size={20} />
-          {!isCollapsed && <span>Logout</span>}
+          {!isCollapsed && <span className="user-sidebar-text">Logout</span>}
         </button>
       </div>
     </aside>

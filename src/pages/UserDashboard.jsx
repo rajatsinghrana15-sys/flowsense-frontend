@@ -22,7 +22,7 @@ import {
   Bar,
   Legend,
 } from "recharts";
-import "../style/UserDashboard.css";
+import "../style/UserDashboard/UserDashboard.css";
 
 // Mock user data structured for future API sync
 
@@ -56,8 +56,8 @@ const UserDashboard = () => {
     ];
 
     return (
-      <div className="user-analytics-module">
-        <div className="section-header">
+      <div className="user-dashboard-analytics-module">
+        <div className="user-dashboard-section-header">
           <h2>Personal Process Analytics</h2>
           <p>
             Track your cycle time, task throughput, and individual productivity
@@ -65,21 +65,26 @@ const UserDashboard = () => {
           </p>
         </div>
 
-        <div className="metrics-pill-grid">
+        <div className="user-dashboard-metrics-grid">
           {efficiencyMetrics.map((item, idx) => (
-            <div key={idx} className="glass-card metric-pill-card">
-              <span className="metric-pill-label">{item.metric}</span>
-              <h3 className="metric-pill-value">{item.score}</h3>
-              <span className="metric-pill-badge">{item.status}</span>
+            <div
+              key={idx}
+              className="user-dashboard-glass-card user-dashboard-metric-card"
+            >
+              <span className="user-dashboard-metric-label">{item.metric}</span>
+              <h3 className="user-dashboard-metric-value">{item.score}</h3>
+              <span className="user-dashboard-metric-badge">{item.status}</span>
             </div>
           ))}
         </div>
 
-        <div className="dashboard-grid-two mt-20">
-          <div className="glass-card chart-card">
+        <div className="user-dashboard-grid-two user-dashboard-mt20">
+          <div className="user-dashboard-glass-card user-dashboard-chart-card">
             <h3>Weekly Productivity Throughput</h3>
-            <p className="card-subtitle">Completed tasks vs daily targets</p>
-            <div className="chart-wrapper">
+            <p className="user-dashboard-card-subtitle">
+              Completed tasks vs daily targets
+            </p>
+            <div className="user-dashboard-chart-wrapper">
               <ResponsiveContainer width="100%" height={280}>
                 <AreaChart
                   data={productivityData}
@@ -124,12 +129,12 @@ const UserDashboard = () => {
             </div>
           </div>
 
-          <div className="glass-card chart-card">
+          <div className="user-dashboard-glass-card user-dashboard-chart-card">
             <h3>Task Completion Benchmark</h3>
-            <p className="card-subtitle">
+            <p className="user-dashboard-card-subtitle">
               Daily execution against department baseline
             </p>
-            <div className="chart-wrapper">
+            <div className="user-dashboard-chart-wrapper">
               <ResponsiveContainer width="100%" height={280}>
                 <BarChart
                   data={productivityData}
@@ -177,8 +182,8 @@ const UserDashboard = () => {
       case "dashboard":
         return (
           <>
-            <div className="dashboard-welcome">
-              <div className="welcome-text">
+            <div className="user-dashboard-welcome">
+              <div className="user-dashboard-welcome-text">
                 <h2>Welcome Back, {userData?.name?.split(" ")[0]} 👋</h2>
                 <p>
                   Track your assigned processes and improve operational
@@ -187,7 +192,7 @@ const UserDashboard = () => {
               </div>
             </div>
             <UserStatsCards />
-            <div className="dashboard-grid-two">
+            <div className="user-dashboard-grid-two">
               <MyProcesses limit={2} onViewDetails={handleSelectProcess} />
               <AIRecommendations limit={2} />
             </div>
@@ -224,7 +229,7 @@ const UserDashboard = () => {
 
   return (
     <div
-      className={`dashboard-container ${isCollapsed ? "sidebar-collapsed" : ""}`}
+      className={`user-dashboard-container ${isCollapsed ? "user-dashboard-sidebar-collapsed" : ""}`}
     >
       <UserSidebar
         activeTab={activeTab}
@@ -232,15 +237,14 @@ const UserDashboard = () => {
         isCollapsed={isCollapsed}
         setIsCollapsed={setIsCollapsed}
       />
-      <div className="dashboard-main">
+      <div className="user-dashboard-main">
         <UserNavbar
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           userData={userData}
         />
 
-        <UserProfile userData={userData} />
-        <main className="dashboard-content">{renderActiveTab()}</main>
+        <main className="user-dashboard-content">{renderActiveTab()}</main>
       </div>
     </div>
   );

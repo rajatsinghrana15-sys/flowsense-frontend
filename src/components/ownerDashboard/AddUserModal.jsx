@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
   const [formData, setFormData] = useState({
@@ -27,41 +28,57 @@ const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const toastId = toast.loading(
+      selectedUser ? "Updating user..." : "Creating user...",
+    );
+
     try {
       if (selectedUser) {
         await axios.put(
-          `http://localhost:5000/api/users/${selectedUser._id}`,
+          `${import.meta.env.VITE_API_URL}/api/users/${selectedUser._id}`,
           formData,
         );
 
-        alert("User Updated");
+        toast.dismiss(toastId);
+        toast.success("User updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/users/create", formData);
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/users/create`,
+          formData,
+        );
 
-        alert("User Created");
+        toast.dismiss(toastId);
+        toast.success("User created successfully!");
       }
 
       fetchUsers();
       closeModal();
     } catch (error) {
       console.log(error);
-      alert("Operation Failed");
+
+      toast.dismiss(toastId);
+      toast.error(error.response?.data?.message || "Operation failed");
     }
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="user-modal">
-        <div className="modal-header">
+    <div className="add-user-modal-overlay">
+      <div className="add-user-modal">
+        <div className="add-user-modal-header">
           <h2>{selectedUser ? "Edit User" : "Create New User"}</h2>
 
-          <button onClick={closeModal}>
+          <button
+            type="button"
+            className="add-user-close-btn"
+            onClick={closeModal}
+          >
             <X size={20} />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form className="add-user-form" onSubmit={handleSubmit}>
           <input
+            className="add-user-input"
             name="name"
             placeholder="Full Name"
             value={formData.name}
@@ -69,6 +86,7 @@ const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
           />
 
           <input
+            className="add-user-input"
             name="email"
             placeholder="Email"
             value={formData.email}
@@ -76,6 +94,7 @@ const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
           />
 
           <input
+            className="add-user-input"
             name="username"
             placeholder="Username"
             value={formData.username}
@@ -83,6 +102,7 @@ const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
           />
 
           <input
+            className="add-user-input"
             name="password"
             placeholder="Password"
             type="password"
@@ -91,21 +111,25 @@ const AddUserModal = ({ closeModal, fetchUsers, selectedUser }) => {
           />
 
           <input
+            className="add-user-input"
             name="department"
             placeholder="Department"
             value={formData.department}
             onChange={handleChange}
           />
 
-          <select name="role" value={formData.role} onChange={handleChange}>
+          <select
+            className="add-user-select"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+          >
             <option value="User">User</option>
-
             <option value="Admin">Admin</option>
-
             <option value="Manager">Manager</option>
           </select>
 
-          <button className="primary-btn">
+          <button className="add-user-submit-btn">
             {selectedUser ? "Update User" : "Create User"}
           </button>
         </form>

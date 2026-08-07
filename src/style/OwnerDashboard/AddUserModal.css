@@ -1,0 +1,153 @@
+/* Overlay */
+
+.add-user-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 99999;
+}
+
+/* Modal */
+
+.add-user-modal {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 30px;
+  animation: addUserPopup 0.35s ease;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Animation */
+
+@keyframes addUserPopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+
+.add-user-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.add-user-modal-header h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* Close Button */
+
+.add-user-close-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: #f1f5f9;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.add-user-close-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Form */
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs */
+
+.add-user-input,
+.add-user-select {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  padding: 0 16px;
+  font-size: 15px;
+  transition: 0.3s;
+  outline: none;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.add-user-input:focus,
+.add-user-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Select */
+
+.add-user-select {
+  cursor: pointer;
+}
+
+/* Button */
+
+.add-user-submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-user-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.28);
+}
+
+.add-user-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .add-user-modal {
+    padding: 22px;
+  }
+
+  .add-user-modal-header h2 {
+    font-size: 22px;
+  }
+
+  .add-user-input,
+  .add-user-select,
+  .add-user-submit-btn {
+    height: 48px;
+  }
+}

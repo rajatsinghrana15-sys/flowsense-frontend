@@ -24,11 +24,14 @@ const Settings = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const { data } = await axios.get("http://localhost:5000/api/auth/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/auth/me`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       setProfile({
         name: data.owner.fullName,
@@ -49,7 +52,7 @@ const Settings = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.put(
-        "http://localhost:5000/api/auth/update-profile",
+        `${import.meta.env.VITE_API_URL}/api/auth/update-profile`,
         {
           fullName: profile.name,
           email: profile.email,
@@ -84,7 +87,7 @@ const Settings = () => {
       }
 
       await axios.put(
-        "http://localhost:5000/api/auth/change-password",
+        `${import.meta.env.VITE_API_URL}/api/auth/change-password`,
         {
           currentPassword: password.currentPassword,
           newPassword: password.newPassword,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
+import toast from "react-hot-toast";
 
 const EditUserModal = ({ user, closeModal, fetchUsers }) => {
   const [formData, setFormData] = useState({
@@ -22,61 +23,93 @@ const EditUserModal = ({ user, closeModal, fetchUsers }) => {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    try {
-      await axios.put(`http://localhost:5000/api/users/${user._id}`, formData);
+    const toastId = toast.loading("Updating user...");
 
-      alert("User Updated Successfully");
+    try {
+      await axios.put(
+        `${import.meta.env.VITE_API_URL}/api/users/${user._id}`,
+        formData,
+      );
+
+      toast.dismiss(toastId);
+      toast.success("User updated successfully!");
 
       fetchUsers();
-
       closeModal();
     } catch (error) {
       console.log(error);
 
-      alert("Update Failed");
+      toast.dismiss(toastId);
+      toast.error(error.response?.data?.message || "Failed to update user");
     }
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="user-modal">
-        <div className="modal-header">
+    <div className="edit-user-modal-overlay">
+      <div className="edit-user-modal">
+        <div className="edit-user-modal-header">
           <h2>Edit User</h2>
 
-          <button onClick={closeModal}>
+          <button
+            type="button"
+            className="edit-user-close-btn"
+            onClick={closeModal}
+          >
             <X size={20} />
           </button>
         </div>
 
-        <form onSubmit={handleUpdate}>
-          <input name="name" value={formData.name} onChange={handleChange} />
-
-          <input name="email" value={formData.email} onChange={handleChange} />
+        <form className="edit-user-form" onSubmit={handleUpdate}>
+          <input
+            className="edit-user-input"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
 
           <input
+            className="edit-user-input"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+
+          <input
+            className="edit-user-input"
             name="username"
             value={formData.username}
             onChange={handleChange}
           />
 
           <input
+            className="edit-user-input"
             name="department"
             value={formData.department}
             onChange={handleChange}
           />
 
-          <select name="role" value={formData.role} onChange={handleChange}>
+          <select
+            className="edit-user-select"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+          >
             <option>User</option>
             <option>Admin</option>
             <option>Manager</option>
           </select>
 
-          <select name="status" value={formData.status} onChange={handleChange}>
+          <select
+            className="edit-user-select"
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+          >
             <option>Active</option>
             <option>Inactive</option>
           </select>
 
-          <button className="primary-btn">Update User</button>
+          <button className="edit-user-submit-btn">Update User</button>
         </form>
       </div>
     </div>

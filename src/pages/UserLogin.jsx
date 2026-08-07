@@ -53,10 +53,10 @@ const UserLogin = () => {
 
       toast.dismiss(toastId);
       toast.success("Login Successful");
+      console.log("Response:", response.data);
+      console.log("Saved User:", JSON.parse(localStorage.getItem("user")));
 
-      setTimeout(() => {
-        navigate("/user-dashboard");
-      }, 800);
+      navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
 
@@ -69,6 +69,17 @@ const UserLogin = () => {
   };
   return (
     <div className="user-login-container">
+      {loading && (
+        <div className="user-login-loader-overlay">
+          <div className="user-login-loader-box">
+            <div className="user-login-loader"></div>
+
+            <h3>Signing In...</h3>
+
+            <p>Please wait while we verify your account.</p>
+          </div>
+        </div>
+      )}
       <div className="user-login-card">
         {/* Header */}
         <div className="user-login-header">

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -23,9 +23,15 @@ import OwnerDashboard from "./pages/OwnerDashboard";
 import UserDashboard from "./pages/UserDashboard";
 
 function App() {
+  const location = useLocation();
+
+  const hideNavbar = ["/owner-dashboard", "/user-dashboard"].includes(
+    location.pathname,
+  );
+
   return (
     <>
-      {/* <Navbar /> */}
+      {!hideNavbar && <Navbar />}
       <ScrollToTop />
 
       <Routes>
@@ -45,8 +51,22 @@ function App() {
         <Route path="/user-login" element={<UserLogin />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
-        <Route path="/owner-dashboard" element={<OwnerDashboard />} />
-        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route
+          path="/owner-dashboard"
+          element={
+            <ProtectedRoute role="owner">
+              <OwnerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user-dashboard"
+          element={
+            <ProtectedRoute roles={["User", "Admin", "Manager"]}>
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/dashboard"

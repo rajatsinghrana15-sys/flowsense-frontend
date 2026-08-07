@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 
 const OwnerLogin = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -43,6 +44,8 @@ const OwnerLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
@@ -52,18 +55,11 @@ const OwnerLogin = () => {
         },
       );
 
-      // Save Token
       localStorage.setItem("token", response.data.token);
-
-      // Save Owner Data
       localStorage.setItem("user", JSON.stringify(response.data.owner));
-
-      // Save Role
       localStorage.setItem("userRole", response.data.owner.role);
-      //Save userID
       localStorage.setItem("userId", response.data.owner._id);
 
-      // Success Popup
       setModalState({
         show: true,
         type: "success",
@@ -77,6 +73,8 @@ const OwnerLogin = () => {
         title: "Login Failed",
         message: error.response?.data?.message || "Something went wrong!",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -92,6 +90,17 @@ const OwnerLogin = () => {
 
   return (
     <div className="login-page-wrapper">
+      {loading && (
+        <div className="owner-login-loader-overlay">
+          <div className="owner-login-loader-box">
+            <div className="owner-login-loader"></div>
+
+            <h3>Signing In...</h3>
+
+            <p>Please wait while we verify your account.</p>
+          </div>
+        </div>
+      )}
       <div className="login-card">
         {/* Header */}
         <div className="login-header">
@@ -177,8 +186,8 @@ const OwnerLogin = () => {
             </Link>
           </div>
 
-          <button type="submit" className="login-submit-btn">
-            Sign In
+          <button type="submit" className="login-submit-btn" disabled={loading}>
+            {loading ? "Signing In..." : "Sign In"}
           </button>
         </form>
 

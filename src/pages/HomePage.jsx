@@ -10,7 +10,6 @@ import Footer from "../components/Footer";
 const HomePage = () => {
   return (
     <div className="min-h-screen font-sans bg-white text-gray-900">
-      <Navbar />
       <HeroSection />
       <StatsSection />
       <ProblemSection />
