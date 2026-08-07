@@ -68,26 +68,28 @@ const UserLogin = () => {
     }
   };
   return (
-    <div className="login-container">
-      <div className="login-card">
+    <div className="user-login-container">
+      <div className="user-login-card">
         {/* Header */}
-        <div className="login-header">
-          <div className="login-icon-badge">
+        <div className="user-login-header">
+          <div className="user-login-icon-badge">
             <LogIn size={24} />
           </div>
-          <h2 className="login-title">Welcome Back!</h2>
-          <p className="login-subtitle">Please enter your details to sign in</p>
+          <h2 className="user-login-title">Welcome Back!</h2>
+          <p className="user-login-subtitle">
+            Please enter your details to sign in
+          </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="form-group">
+        <form onSubmit={handleSubmit} className="user-login-form">
           {/* Email Field */}
-          <div className="field-container">
-            <label htmlFor="email" className="input-label">
+          <div className="user-login-field">
+            <label htmlFor="email" className="user-login-label">
               Email Address
             </label>
-            <div className="input-wrapper">
-              <div className="input-icon-left">
+            <div className="user-login-input-wrapper">
+              <div className="user-login-input-icon">
                 <Mail size={20} />
               </div>
               <input
@@ -98,23 +100,23 @@ const UserLogin = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@example.com"
-                className="form-input"
+                className="user-login-input"
               />
             </div>
           </div>
 
           {/* Password Field */}
-          <div className="field-container">
-            <div className="label-row">
-              <label htmlFor="password" className="input-label">
+          <div className="user-login-field">
+            <div className="user-login-label-row">
+              <label htmlFor="password" className="user-login-label">
                 Password
               </label>
-              <a href="#forgot" className="forgot-link">
+              <a href="#forgot" className="user-login-forgot-link">
                 Forgot password?
               </a>
             </div>
-            <div className="input-wrapper">
-              <div className="input-icon-left">
+            <div className="user-login-input-wrapper">
+              <div className="user-login-input-icon">
                 <Lock size={20} />
               </div>
               <input
@@ -125,12 +127,12 @@ const UserLogin = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="••••••••"
-                className="form-input-password"
+                className="user-login-password-input"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="toggle-password-btn"
+                className="user-login-toggle-password"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -138,24 +140,28 @@ const UserLogin = () => {
           </div>
 
           {/* Remember Me Checkbox */}
-          <div className="checkbox-container">
+          <div className="user-login-checkbox-container">
             <input
               type="checkbox"
               id="rememberMe"
               name="rememberMe"
               checked={formData.rememberMe}
               onChange={handleChange}
-              className="checkbox-input"
+              className="user-login-checkbox"
             />
-            <label htmlFor="rememberMe" className="checkbox-label">
+            <label htmlFor="rememberMe" className="user-login-checkbox-label">
               Remember me
             </label>
           </div>
 
           {/* Submit Button */}
-          <button type="submit" disabled={loading} className="submit-btn">
+          <button
+            type="submit"
+            disabled={loading}
+            className="user-login-submit-btn"
+          >
             {loading ? (
-              <div className="spinner" />
+              <div className="user-login-spinner" />
             ) : (
               <>
                 <span>Sign In</span>
@@ -166,9 +172,9 @@ const UserLogin = () => {
         </form>
 
         {/* Footer Link */}
-        <p className="footer-text">
+        <p className="user-login-footer-text">
           Back to{" "}
-          <Link to="/" className="footer-link">
+          <Link to="/" className="user-login-footer-link">
             Home
           </Link>
         </p>

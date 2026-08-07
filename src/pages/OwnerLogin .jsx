@@ -60,6 +60,8 @@ const OwnerLogin = () => {
 
       // Save Role
       localStorage.setItem("userRole", response.data.owner.role);
+      //Save userID
+      localStorage.setItem("userId", response.data.owner._id);
 
       // Success Popup
       setModalState({
